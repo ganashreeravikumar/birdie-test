@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 
 const connection = require('./db');
@@ -25,6 +26,9 @@ connection.connect(err => {
 
     app.get('/getdataForSelctedCol', (req, res) => getDataFromDB(connection, req, res));
     app.get('/getColumnNames', (req, res) => getColoumn(connection, req, res));
+    app.get('/', (req, res) => {
+      res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    });
   }
 });
 
