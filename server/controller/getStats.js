@@ -20,16 +20,20 @@ const groupRows = (rows, col) => {
 };
 
 module.exports = (DAO) => (req, res) => {
-    const col = req.query.column;
+    if(!req.query.column) {
+        res.status(400).send({err: 'query parameter "column" missing'});
+    } else {
+        const col = req.query.column;
 
-    DAO(col, (err, rows) => {
-        if (err) {
-            res.status(500).send(err);
-        } else {
-            // Added this js code inorder to group the results.
-            let groupedRes = groupRows(rows, col);
+        DAO(col, (err, rows) => {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                // Added this js code inorder to group the results.
+                let groupedRes = groupRows(rows, col);
 
-            res.json(groupedRes); // Replace this with res.json(rows) when the commented query is used.
-        }
-    });
+                res.json(groupedRes); // Replace this with res.json(rows) when the commented query is used.
+            }
+        });   
+    }
 };
