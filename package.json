@@ -20,7 +20,7 @@
     "semantic-ui-react": "^0.82.5"
   },
   "scripts": {
-    "run": "node server/App.js",
+    "run": "yarn build && node server/App.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
