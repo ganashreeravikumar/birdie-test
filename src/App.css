@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.data-view {
+  margin: 30px;
+}
+
+.dropdown-view {
+  display: flex;
+  margin: 100px 10px 30px 10px;
+}
+
+.selection-text {
+  flex: 2;
+  font-size: 15px;
+}
+
+.show-btn {
+  flex: 2;
+}
+
+.selection-dropDown {
+  flex: 6;
+  margin-right: 10px;
+}
